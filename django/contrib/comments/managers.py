@@ -40,7 +40,7 @@ class CommentQuerySet(models.query.QuerySet):
 class CommentManager(models.Manager):
 
     def get_query_set(self):
-        return CommentQuerySet(self.model)
+        return CommentQuerySet(self.model, using=self._db)
 
     def in_moderation(self):
         """
