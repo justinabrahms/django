@@ -117,7 +117,7 @@ def model_to_dict(instance, fields=None, exclude=None):
         if exclude and f.name in exclude:
             continue
         if isinstance(f, ManyToManyField):
-            # If the object doesn't have a primry key yet, just use an empty
+            # If the object doesn't have a primary key yet, just use an empty
             # list for its m2m fields. Calling f.value_from_object will raise
             # an exception.
             if instance.pk is None:
@@ -288,7 +288,7 @@ class BaseModelForm(BaseForm):
             # Exclude empty fields that are not required by the form, if the
             # underlying model field is required. This keeps the model field
             # from raising a required error. Note: don't exclude the field from
-            # validaton if the model field allows blanks. If it does, the blank
+            # validation if the model field allows blanks. If it does, the blank
             # value may be included in a unique check, so cannot be excluded
             # from validation.
             else:
@@ -368,7 +368,7 @@ class ModelForm(BaseModelForm):
     __metaclass__ = ModelFormMetaclass
 
 def modelform_factory(model, form=ModelForm, fields=None, exclude=None,
-                       formfield_callback=None):
+                      formfield_callback=None,  widgets=None):
     # Create the inner Meta class. FIXME: ideally, we should be able to
     # construct a ModelForm without creating and passing in a temporary
     # inner class.
@@ -379,6 +379,8 @@ def modelform_factory(model, form=ModelForm, fields=None, exclude=None,
         attrs['fields'] = fields
     if exclude is not None:
         attrs['exclude'] = exclude
+    if widgets is not None:
+        attrs['widgets'] = widgets
 
     # If parent form class already has an inner Meta, the Meta we're
     # creating needs to inherit from the parent's inner meta.
