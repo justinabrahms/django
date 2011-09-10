@@ -30,6 +30,11 @@ class CommentManagerTests(CommentTestCase):
         moderated_comments = list(Comment.objects.in_moderation().order_by("id"))
         self.assertEqual(moderated_comments, [c1, c2])
 
+    def testGetCommentsForModel(self):
+        c1, c2, c3, c4 = self.createSomeComments()
+        comments_for_model = list(Comment.objects.for_model(Article).order_by("id"))
+        self.assertEqual(comments_for_model, [c1, c3])
+
     def testRemovedCommentsNotInModeration(self):
         """Removed comments are not considered in moderation"""
         c1, c2, c3, c4 = self.createSomeComments()
