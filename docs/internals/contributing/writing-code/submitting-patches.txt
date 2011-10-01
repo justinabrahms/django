@@ -120,7 +120,8 @@ Contributing with GitHub and Bitbucket
 Django also accepts contributions from GitHub and Bitbucket. To submit
 a patch, issue a pull request to the official Django repository. The
 GitHub repository is at `https://github.com/django/django` and the
-Bitbucket repository is at `https://bitbucket.org/django/django`.
+Bitbucket repository is at `https://bitbucket.org/django/django`. **A 
+pull request is not a substitute for a Trac ticket.**
 
 In your pull request, include the ticket number and a brief
 description of your patch. After you issue the pull request, update
