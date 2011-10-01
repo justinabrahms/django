@@ -114,19 +114,19 @@ Patch style
       behavior of an existing feature, the patch should also contain
       documentation.
 
-Contributing with Github and Bitbucket
+Contributing with GitHub and Bitbucket
 --------------------------------------
 
-Django also accepts contributions from github and bitbucket. To submit
+Django also accepts contributions from GitHub and Bitbucket. To submit
 a patch, issue a pull request to the official Django repository. The
-github repository is at `https://github.com/django/django` and the
-bitbucket repository is at `https://bitbucket.org/django/django`.
+GitHub repository is at `https://github.com/django/django` and the
+Bitbucket repository is at `https://bitbucket.org/django/django`.
 
 In your pull request, include the ticket number and a brief
 description of your patch. After you issue the pull request, update
 the Django ticket tracker with a link to the request. Discussion of
-the ticket will likely continue on the ticket tracker, but you're more
-than welcome to host the patch on either github or bitbucket. The
+the ticket should continue on the ticket tracker, but you're more
+than welcome to host the patch on either GitHub or Bitbucket. The
 patches from these services are held to the same standards as patches
 submitted via Trac.
 
